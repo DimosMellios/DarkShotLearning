@@ -17,4 +17,10 @@ The scripts work for every dataset if :
 
   - The images are in .png format (otherwise change to your format of preferance)
   - The folders should have a main folder for each category and subfolders for each one of them
-
+        i.e. 
+              main_dir
+                 |
+               Drugs
+              /     \
+          Opium    Cannabis
+  
