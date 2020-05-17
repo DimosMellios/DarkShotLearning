@@ -85,9 +85,9 @@ def FindSize(location):
 # In[1]:
 
 
-def SizeScaler(source, thrush_size = None,final_size = None):
+def SizeScaler(source, thresh_size = None,final_size = None):
     
-    '''Checks if the images meet the given thrushold
+    '''Checks if the images meet the given threshold
        - Resizes keeping the aspect ratio
        
        - Resizes to squared images based on the final size 
@@ -183,9 +183,9 @@ def SizeScaler(source, thrush_size = None,final_size = None):
     
     
     ###########  Scaling the smaller images to an appropriate size  ################
-    if thrush_size == None:
-        thrush_size = (120,120)
-        print('\nThe thrushold for the minimum size of image is 120x120\n')
+    if thresh_size == None:
+        thresh_size = (120,120)
+        print('\nThe threshold for the minimum size of image is 120x120\n')
         
         for image_path in new_image_paths:
             
@@ -203,10 +203,10 @@ def SizeScaler(source, thrush_size = None,final_size = None):
                 new_image.save(image_path, 'PNG')
                 
     else:
-        print('\nYou have specified the minimum size of acceptable images to {}\n'.format(thrush_size))
+        print('\nYou have specified the minimum size of acceptable images to {}\n'.format(thresh_size))
         for image_path in new_image_paths:
             # split the dimmetions of the images
-            w,h = zip((thrush_size))
+            w,h = zip((thresh_size))
             
             if w[0] >= 120 and h[0] >= 120:
                 pass
@@ -217,7 +217,7 @@ def SizeScaler(source, thrush_size = None,final_size = None):
                 new_image.save(image_path, 'PNG')
                 
             
-    print('All the images were tested to fit the specified thrushold --> ', thrush_size)
+    print('All the images were tested to fit the specified threshold --> ', thresh_size)
     
     ### Find the changed images once again
     new_image_paths = glob.glob('{}\***\**\*.png'.format(destination+'\\Train_Data'))
