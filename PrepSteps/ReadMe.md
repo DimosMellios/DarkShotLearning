@@ -1,10 +1,16 @@
---- Not all the steps are mandatory if the dataset is prepared ---
+--- Not all the steps are mandatory if the dataset is completelly prepared ---
 
 Explanation of the code:
   - Resize.py
     -- 
-
-
+    
+    
+    
+  - OneShotAugment.py
+    --
+    
+    
+    
 ---NOTE---
 The scripts work for every dataset if :
 
