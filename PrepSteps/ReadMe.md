@@ -12,6 +12,7 @@ Explanation of the code:
     
     
 ---NOTE---
+
 The scripts work for every dataset if :
 
   - The images are in .png format (otherwise change to your format of preferance)
