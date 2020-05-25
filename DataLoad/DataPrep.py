@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 # IMPORTS
 import pandas as pd
 import os
@@ -13,9 +7,6 @@ import cv2
 import random
 from sklearn import preprocessing
 from sklearn.utils import shuffle
-
-
-# In[2]:
 
 
 def counter(data,location):
@@ -37,7 +28,21 @@ def counter(data,location):
     return df
 
 
-def DataLoad(location,split_size=None, pairs=5): #, size
+def DataLoad(location,split_size=None, pairs=5):
+    
+    '''Creates the pairs of the data and stores them in a numpy
+    Inputs:
+           - The directory of the final dataset
+           - The split size (float) : 
+                  if the user does not define the size --> no split is made (for the Testing Data)
+           - The pairs is set to 5 : if your ram allows it you can generate more pairs    
+           
+    Returns:
+           - The 2 sets of images/numpies for training and testing  (images_a, images_b, img_test_a, img_test_b)
+           - The labels for the 2 sets  (y_true, y_test)
+           - And the actual sets (sets)
+           '''
+    
     
     # find the size of our dataset
     data = glob.glob(location+'\\***\\**\\*.png')
@@ -151,4 +156,3 @@ def DataLoad(location,split_size=None, pairs=5): #, size
               '\n-- {} Testing samples'.format(len(y_test)))
         
         return images_a, images_b, y_true , img_test_a, img_test_b, y_test, sets
-
