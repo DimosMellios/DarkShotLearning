@@ -11,11 +11,14 @@ An example of the data can be found in the data folder
    The data folder contains 3 datasets that were generated from the same initial images (3500)
     
      - Dummy_Druglord    (25 categories) : By shape        -->  All powders together, all pills together, etc
+     
      - Mediocre_Druglord (67 categories) : By_type         -->  Benzos/Attivan, Benzos/Valium
+     
      - Advanced_Druglord (100 categories): By_type & shape -->  Benzos/Xanax Pills, Benzos/Xanax Powder, 
                                                                 Benzos/Xanax Boxes, etc
      
-     Note:
+     
+   Note:
      From top to bottom the difficulty/hours of labeling such dataset increased
      Each dataset has different results for the models
      
