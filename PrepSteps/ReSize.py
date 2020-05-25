@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 # IMPORTS
 import os
 import errno
@@ -15,15 +9,11 @@ import shutil
 import statistics
 
 
-# In[2]:
-
-
 class color():
+    '''Just to make some part of the printed parts bold'''
     BOLD = '\033[1m'
     END = '\033[0m'
 
-
-# In[3]:
 
 
 def get_key(val,my_dict): 
@@ -35,7 +25,7 @@ def get_key(val,my_dict):
 def FindSize(location):
     
     '''It gives some information about the dataset 
-    Size of images etc'''
+    Size of images, the most popular sizes in your dataset etc'''
     
     # Find the locations of the images in the subfolders and save paths in a dataframe
     t = glob.glob('{}\***\**\*.png'.format(location))
@@ -80,10 +70,6 @@ def FindSize(location):
         print('No', j,'-->', get_key(i,my_dict), 'with  ', i, 'appearances')
         j +=1
         
-
-
-# In[1]:
-
 
 def SizeScaler(source, thresh_size = None,final_size = None):
     
@@ -181,7 +167,6 @@ def SizeScaler(source, thresh_size = None,final_size = None):
     new_image_paths = glob.glob('{}\***\**\*.png'.format(destination+'\\Train_Data'))
      
     
-    
     ###########  Scaling the smaller images to an appropriate size  ################
     if thresh_size == None:
         thresh_size = (120,120)
@@ -251,5 +236,3 @@ def SizeScaler(source, thresh_size = None,final_size = None):
             
         print('\nThe images were changed to the specified final size SUCCESSFULLY--> ', final_size)
         print(color.BOLD,'The Dataset is ready to be fed to the model',color.END)
-        
-
