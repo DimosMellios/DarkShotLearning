@@ -20,6 +20,7 @@ An example of the data can be found in the data folder
      
     Note:
      From top to bottom the difficulty/hours of labelling the datasets increased
+     Most of the changes are in the drug categories
      Each dataset has different results for the models
      
 You can download the full dataset from:
