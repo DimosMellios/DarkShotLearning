@@ -8,7 +8,7 @@ The datasets used for the experiements is consisted by 3500 images scraped from 
   
 An example of the data can be found in the data folder
 
-   The data folder contains 3 datasets that generated from the same initial images (3500)
+   The data folder contains 3 datasets that were generated from the same initial images (3500)
     
      - Dummy_Druglord    (25 categories) : By shape        -->  All powders together, all pills together, etc
      - Mediocre_Druglord (67 categories) : By_type         -->  Benzos/Attivan, Benzos/Valium
