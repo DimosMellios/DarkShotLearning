@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 # IMPORTS
 import glob
 import pandas as pd
@@ -20,9 +14,6 @@ import imgaug.augmenters as iaa
 import matplotlib.pyplot as plt
 
 from tqdm.auto import tqdm
-
-
-# In[43]:
 
 
 def FindMax(location, at_least = None):
@@ -74,8 +65,7 @@ def FindMax(location, at_least = None):
     # Store in dataset
     counter = pd.DataFrame(k,columns = ['Names'] )
     counter['Counts'] = v
-    
-    
+       
     
     '''
        ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -137,8 +127,7 @@ def FindMax(location, at_least = None):
         
         ## Split the names of the initial directory to make the new folder names
         old_folders = location + '\\' + set_aside['Names']
-        
-        
+          
               
         ################## Creating the Folders #####################
 
@@ -219,9 +208,6 @@ def FindMax(location, at_least = None):
         print('Note: You did not specify a threshold for the minimum acceptable number of images per category')
 
 
-# In[44]:
-
-
 def counter(data,location):
     
     '''Creates a dataframe with the location and
@@ -243,9 +229,6 @@ def counter(data,location):
     return df
 
 
-# In[45]:
-
-
 def AugmentSteps(elem,l,r):
     
     '''Augments the images in 6 ways
@@ -254,7 +237,6 @@ def AugmentSteps(elem,l,r):
         - directory location
         - exact file location
         '''
-    
     
     # read the image
     image = cv2.imread(elem)
@@ -296,9 +278,6 @@ def AugmentSteps(elem,l,r):
     gaussian_noise=iaa.AdditiveGaussianNoise(10,25)
     noise_image=gaussian_noise.augment_image(image)
     cv2.imwrite('{}\\noise_add{}.png'.format(l,r), noise_image )
-
-
-# In[46]:
 
 
 def AugmentData(location):
@@ -377,4 +356,3 @@ def AugmentData(location):
     
     
     print('ALL DONE')
-
