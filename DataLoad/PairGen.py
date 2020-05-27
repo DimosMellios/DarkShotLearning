@@ -75,6 +75,7 @@ def DataLoad(location,split_size=None, pairs=5):
     y_true = []
     
     sets = []   # This list is for monitoring the image_a and image_b combinations
+    test_sets = []
     
     # Create the dataset based on the pairs the user indicates
     ################## Training Set #########################
@@ -119,7 +120,7 @@ def DataLoad(location,split_size=None, pairs=5):
                 
             img_test_a.append(images[j])
             img_test_b.append(images[img2_index])
-            sets.append([int(labels[j]),int(labels[img2_index])])
+            test_sets.append([int(labels[j]),int(labels[img2_index])])
             
             # assign the appropriate label to the pairs
             if labels[j] == labels[img2_index]:
@@ -155,4 +156,4 @@ def DataLoad(location,split_size=None, pairs=5):
               '\n-- {} Training samples'.format(len(y_true)), 
               '\n-- {} Testing samples'.format(len(y_test)))
         
-        return images_a, images_b, y_true , img_test_a, img_test_b, y_test, sets
+        return images_a, images_b, y_true ,sets, img_test_a, img_test_b, y_test, test_sets
