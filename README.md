@@ -41,3 +41,9 @@ You can download the full dataset from:
 - **DataLoad:**
   - **PairGen.py** -- Creates balanced N-shot pairs for the Siamese Neural Networks
   - **DataPrep.py** -- Creates random N-shot pairs for the Siamese Neural Networks - The positive and negative representation is                          completely unbalanced
+- **Train_Tes:**
+  - **TrainModels.ipynb** -- Jupyter Notebook with the Training and Testing of all the models
+  
+- **Triplet_Loss_Nets:**
+  - **Triplet_Loss.py** -- Calculates the Triplet Loss for the Siamese Neural Network
+  - **TripletNet.py** -- The Triplet Siamese Neural Network
