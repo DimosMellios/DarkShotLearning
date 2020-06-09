@@ -26,10 +26,6 @@ def counter(data,location):
     
     return df
 
-
-# In[10]:
-
-
 def DataLoad(location): #, size
     
     # find the size of our dataset
