@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 #IMPORTS
 from tensorflow.keras.layers import Activation,Input,Lambda, Dense, Dropout, Conv2D, MaxPooling2D, Flatten
 from tensorflow.keras.optimizers import RMSprop, Adam
@@ -11,10 +5,6 @@ from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras import backend as K
 from tensorflow.keras import regularizers
 import tensorflow as tf
-
-
-# In[ ]:
-
 
 
 def categorical1(image_shape, categories):
