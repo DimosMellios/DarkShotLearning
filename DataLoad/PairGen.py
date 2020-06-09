@@ -1,12 +1,11 @@
-# IMPORTS
+#IMPORTS
 import pandas as pd
-import os
 import numpy as np
 import glob
-import cv2
 import random
-from sklearn import preprocessing
+import cv2
 from sklearn.utils import shuffle
+from sklearn import preprocessing
 
 
 def counter(data,location):
@@ -28,21 +27,10 @@ def counter(data,location):
     return df
 
 
-def DataLoad(location,split_size=None, pairs=5):
-    
-    '''Creates the pairs of the data and stores them in a numpy
-    Inputs:
-           - The directory of the final dataset
-           - The split size (float) : 
-                  if the user does not define the size --> no split is made (for the Testing Data)
-           - The pairs is set to 5 : if your ram allows it you can generate more pairs    
-           
-    Returns:
-           - The 2 sets of images/numpies for training and testing  (images_a, images_b, img_test_a, img_test_b)
-           - The labels for the 2 sets  (y_true, y_test)
-           - And the actual sets (sets)
-           '''
-    
+# In[10]:
+
+
+def DataLoad(location): #, size
     
     # find the size of our dataset
     data = glob.glob(location+'\\***\\**\\*.png')
@@ -50,10 +38,6 @@ def DataLoad(location,split_size=None, pairs=5):
     # create the dataframe with the categories and shuffle the data
     info = counter(data,location)
     info = shuffle(info)
-    
-    # define the size of train and test 
-    x_size = int(len(info) * (1 - split_size))
-    y_size = 1 - x_size
     
     # Encode the Labels of the dataset
     le = preprocessing.LabelEncoder()
@@ -68,92 +52,65 @@ def DataLoad(location,split_size=None, pairs=5):
         image = cv2.imread(i)
         images.append(image)
     # Change the list to numpy array
-    images = np.asarray(images)   
+    images = np.asarray(images) 
     
-    images_a = []
-    images_b = []
-    y_true = []
+    return images, labels
+
+
+def make_pairs(location, split_size, pair_num):
     
-    sets = []   # This list is for monitoring the image_a and image_b combinations - train set
-    test_sets = []  # This list is for monitoring the image_a and image_b combinations - test set
+    '''Creates balanced positive and negative pairs for each image in the given dataset
     
-    # Create the dataset based on the pairs the user indicates
-    ################## Training Set #########################
+    Inputs:
+        The split size (tuple) for the test set
+        The number of pairs (integer)'''
     
-    for i in range(x_size):
-        for _ in range(pairs):
-            
-            img2_index = i
-            
-            # In case the image that is picked is the same as the image_a , randomly pick another
-            while img2_index == i:
-                img2_index = random.randint(0,x_size-1)
-                
-            images_a.append(images[i])
-            images_b.append(images[img2_index])
-            sets.append([int(labels[i]),int(labels[img2_index])])
-            
-            # assign the appropriate label to the pairs
-            if labels[i] == labels[img2_index]:
-                # assign 1 if it is from the same category
-                y_true.append(1.)
-                
-            else:
-                # assign 0 if  the category is different
-                y_true.append(0.)
+    x,y = DataLoad(location)
+    #x = x.astype('float32')
+    #x /= 255
     
-    
-    img_test_a = []
-    img_test_b = []
-    y_test = []
-    
-    #################### Testing Set #########################
-    
-    for j in range(x_size, len(labels)):
-        for _ in range(pairs):
-            
-            img2_index = j
-            
-            # In case the image that is picked is the same as the image_a , randomly pick another
-            while img2_index == j:
-                img2_index = random.randint(x_size,len(images)-1)
-                
-            img_test_a.append(images[j])
-            img_test_b.append(images[img2_index])
-            test_sets.append([int(labels[j]),int(labels[img2_index])])
-            
-            # assign the appropriate label to the pairs
-            if labels[j] == labels[img2_index]:
-                # assign 1 if it is from the same category
-                y_test.append(1.)
-                
-            else:
-                # assign 0 if  the category is different
-                y_test.append(0.)
-      
-    ##########################################################
-    images_a = np.squeeze(np.array(images_a))
-    images_b = np.squeeze(np.array(images_b))
-    y_true   = np.squeeze(np.array(y_true))
-    
-    
-    img_test_a = np.squeeze(np.array(img_test_a))
-    img_test_b = np.squeeze(np.array(img_test_b))
-    y_test   = np.squeeze(np.array(y_test))
-    
-    print('The initial dataset was ', len(data), ' images')
-    
-    
-    if len(img_test_a) == 0:
-        # In case the split size is 0 : just for the testing part
+    num_classes = max(y) + 1
+    digit_indices = [np.where(y == i)[0] for i in range(num_classes)]
+
+    pairs = []
+    labels = []
+
+    for idx1 in range(len(x)):
+        for _ in range(pair_num):
+            # add a matching example
+            x1 = x[idx1]
+            label1 = y[idx1]
+            idx2 = random.choice(digit_indices[label1])
+            x2 = x[idx2]
         
-        print('\nWith 5 pairs the final dataset is consisted by:', len(y_true))
-        return images_a, images_b, y_true, sets
+            pairs += [[x1, x2]]
+            labels += [1]
     
-    else:
+            # add a not matching example
+            label2 = random.randint(0, num_classes-1)
+            while label2 == label1:
+                label2 = random.randint(0, num_classes-1)
+
+            idx2 = random.choice(digit_indices[label2])
+            x2 = x[idx2]
         
-        print('\nWith 5 pairs the final dataset is consisted by:',
-              '\n-- {} Training samples'.format(len(y_true)), 
-              '\n-- {} Testing samples'.format(len(y_test)))
-        
-        return images_a, images_b, y_true ,sets, img_test_a, img_test_b, y_test, test_sets
+            pairs += [[x1, x2]]
+            labels += [0]
+    
+    pairs = np.array(pairs)
+    labels = np.array(labels)
+    # create the size of the test dataset
+    test_size = int(len(labels) * (split_size))
+    index = random.sample(range(len(labels)), test_size)
+    
+    # Random test sample
+    pairs_test = pairs[index]
+    labels_test = labels[index]
+    
+    
+    # Remove the test samples from the train dataset
+    pairs = np.delete(pairs, index, axis=0)
+    labels  = np.delete(labels, index)    
+    
+    
+    return pairs, labels, pairs_test, labels_test
