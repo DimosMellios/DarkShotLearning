@@ -25,3 +25,19 @@ An example of the data can be found in the data folder
      
 You can download the full dataset from:
       
+      
+      
+**Code Explanation:**
+
+- **PrepSteps:**
+  - **ReSize.py**  --
+  - **OneShotAugment.py**  --
+
+- **LoadModels:**
+  - **CategoricalNets.py** -- 2 categorical convolutional neural networks (CNN) 
+  - **SiameseNet.py**  -- The Siamese Neural Network with Absolute Distance calculation and Binary Cross-entropy Loss
+  - **SiameseNet_Contrastive.py** -- The Siamese Neural Network using the Eucledian Distance and Contrastive Loss
+  
+- **DataLoad:**
+  - **PairGen.py** -- Creates balanced N-shot pairs for the Siamese Neural Networks
+  - **DataPrep.py** -- Creates random N-shot pairs for the Siamese Neural Networks - The positive and negative representation is                          completely unbalanced
