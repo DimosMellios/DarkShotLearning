@@ -1,5 +1,5 @@
 # DarkShotLearning
-**One Shot Learning with Siamese Neural Networks on Dark Web Images + Triplet Siamese Neural Networks
+**One Shot Learning with Siamese Neural Networks on Dark Web Images + Triplet Siamese Neural Networks**
 
 The datasets used for the experiements is consisted by 3500 images scraped from the Dark Web
   - There are 11 main categories
