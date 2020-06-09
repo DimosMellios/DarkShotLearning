@@ -74,8 +74,8 @@ def DataLoad(location,split_size=None, pairs=5):
     images_b = []
     y_true = []
     
-    sets = []   # This list is for monitoring the image_a and image_b combinations
-    test_sets = []
+    sets = []   # This list is for monitoring the image_a and image_b combinations - train set
+    test_sets = []  # This list is for monitoring the image_a and image_b combinations - test set
     
     # Create the dataset based on the pairs the user indicates
     ################## Training Set #########################
