@@ -45,6 +45,6 @@ You can download the full dataset from:
 - **RunModels:**
   - **Triplet_Runner.ipynb** -- Jupyter Notebook with the Training and Testing of the Tiplet Siamese Neural Network
   
-- **Triplet_Loss_Nets:**
+- **TripletSiamese:**
   - **Triplet_Loss.py** -- Calculates the Triplet Loss for the Siamese Neural Network
   - **TripletNet.py** -- The Triplet Siamese Neural Network
