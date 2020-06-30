@@ -52,3 +52,9 @@ You can download the full dataset from:
   - **Test_Triplet.ipynb**  -- Jupyter Notebook with the Training and Testing of the Tiplet Siamese Neural Network
   - **Test_Siamese.ipynb**  -- Jupyter Notebook with the Training and Testing of the Siamese Neural Network
   - **Test_Baseline.ipynb** -- Jupyter Notebook with the baseline comparison models (CNN + KNN + NAIVE-statistical)
+  
+  
+  
+- **Figures**
+  - Includes the TSNE manifolds from the 10-way and 8-way datasets
+  ![alt text](https://github.com/DimosMellios/DarkShotLearning/Figures/10-way-100epochs.png?raw=true)
