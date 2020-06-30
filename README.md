@@ -51,4 +51,4 @@ You can download the full dataset from:
 - **TO RUN THE MODELS**
   - **Test_Triplet.ipynb**  -- Jupyter Notebook with the Training and Testing of the Tiplet Siamese Neural Network
   - **Test_Siamese.ipynb**  -- Jupyter Notebook with the Training and Testing of the Siamese Neural Network
-  - **Test_Baseline.ipynb** -- Jupyter Notebook with the baseline comparison models
+  - **Test_Baseline.ipynb** -- Jupyter Notebook with the baseline comparison models (CNN + KNN + NAIVE-statistical)
