@@ -11,6 +11,11 @@ Explanation of the code:
     
     
     
+  - PrepareData.py
+    --
+If you need all of the preprocessing steps then call the PrepareData.py that runs all the above in a sequence
+    
+    
 ---NOTE---
 
 The scripts work for every dataset if :
