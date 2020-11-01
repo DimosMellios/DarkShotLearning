@@ -59,3 +59,4 @@ You can download the full dataset from:
   - Includes the TSNE manifolds from the 10-way and 8-way datasets
   
     ![8-way-manifold](https://raw.githubusercontent.com/DimosMellios/DarkShotLearning/master/Figures/8-way-100epochs.png)
+    <img src="/DimosMellios/DarkShotLearning/blob/master/Figures/8-way-100epochs.png?raw=true" alt="8-way-100epochs.png">
