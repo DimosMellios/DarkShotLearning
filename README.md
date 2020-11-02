@@ -4,7 +4,21 @@
 
 
 **Overview**
-In this project the Label-Agnostic Siamese and Triplet Siamese Neural Networks are used for One-Shot and Few-Shot experiments. In general, the Siamese Neural Networks are (two) identical neural networks that are trained in parallel. The neural networks produce embeddings (128,256,..,etc) from the input images which are then used to identify the similarities of the two outputs. The similarity of the two embeddings is calculated through the contrastive loss function.
+
+In this project the Label-Agnostic Siamese and Triplet Siamese Neural Networks are used for One-Shot and Few-Shot experiments. 
+
+**Siamese Neural Networks**
+
+The Siamese Neural Networks are (two) identical neural networks that are trained in parallel. The neural networks produce embeddings (128,256,..,etc) from the input images which are then used to identify the similarities of the two outputs. The similarity of the two embeddings is calculated by measuring the Euclidean distance between them, and the contrastive loss function is used to penalize the calculation of the embedding distances accordingly.
+
+**Triplet-Siamese Neural Networks**
+
+Similar to the Siamese Neural Networks the Triplet-Siamese Networks are making use of three identical embedding neural networks (CNNs) in this case. The embedding similarities are compared with the Triplet Loss function. In the case of Triplet-Siamese the loss is calculated instead of the overall accuracy*. To visualize how well the Triplet-Siamese Network has separated the embeddings we can use the TSNE library and visualize the manifolds of the generated embeddings (see Figures folder). 
+
+**Note:** The Triplet-Siamese Neural Network generally require a lot of hours of training, esepecially compared to the Siamese Neural Networks that are quite lightweight.
+
+
+*With a simple transfer learning script we can calculate the accuracy of the prediction. 
 
 The models were tested on images of various sizes that (mainly) depict illegal drugs. 
 
