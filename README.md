@@ -2,7 +2,7 @@
 **-One Shot Learning with Siamese Neural Networks on Dark Web Images
 -Triplet Siamese Neural Networks with Triplet Loss**
 
-In this project the Label-Agnostic Siamese and Triplet Siamese Neural Networks are used on One-Shot and Few-Shot experiments. The data used are images of various sizes mainly consisted of drugs. 
+In this project the Label-Agnostic Siamese and Triplet Siamese Neural Networks are used on One-Shot and Few-Shot experiments. I tested images of various sizes that (mainly) depict illegal drugs. 
 
 The datasets used for the experiments are consisted by 3500 images scraped from the Dark Web
   - There are 11 main categories
