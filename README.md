@@ -53,7 +53,7 @@ An example of the data can be found in the data folder
   - **Triplet_Loss.py** -- Calculates the Triplet Loss for the Siamese Neural Network
   - **TripletNet.py** -- The Triplet Siamese Neural Network
   
-  
+__________________________________________________________________________________________________________________________________
 - **TO RUN THE MODELS**
   - **Test_Triplet.ipynb**  -- Jupyter Notebook with the Training and Testing of the Tiplet Siamese Neural Network
   - **Test_Siamese.ipynb**  -- Jupyter Notebook with the Training and Testing of the Siamese Neural Network
