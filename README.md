@@ -1,5 +1,6 @@
 # DarkShotLearning + DarkTNN
 **One Shot Learning with Siamese Neural Networks on Dark Web Images + Triplet Siamese Neural Networks with Triplet Loss**
+In this project the Label-Agnostic Siamese and Triplet Siamese Neural Networks are used on One-Shot and Few-Shot experiments. The data used are images of various sizes mainly consisted of drugs. 
 
 The datasets used for the experiments are consisted by 3500 images scraped from the Dark Web
   - There are 11 main categories
@@ -12,9 +13,9 @@ An example of the data can be found in the data folder
     
      - Junior_Dealer (Sample Included)   (25 categories) : By shape        -->  All powders together, all pills together, etc
      
-     - Senior_Dealer (Not Included) (67 categories) : By_type         -->  Benzos/Attivan, Benzos/Valium
+     - Senior_Dealer (Not Included)      (67 categories) : By_type         -->  Benzos/Attivan, Benzos/Valium
      
-     - Druglord (Sample Included) (100 categories): By_type & shape -->  Benzos/Xanax Pills, Benzos/Xanax Powder, 
+     - Druglord (Sample Included)        (100 categories): By_type & shape -->  Benzos/Xanax Pills, Benzos/Xanax Powder, 
                                                                 Benzos/Xanax Boxes, etc
      
      
