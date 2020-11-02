@@ -1,8 +1,12 @@
 # DarkShotLearning + DarkTNN
-**-One Shot Learning with Siamese Neural Networks on Dark Web Images
+**One Shot Learning with Siamese Neural Networks on Dark Web Images
 -Triplet Siamese Neural Networks with Triplet Loss**
 
-In this project the Label-Agnostic Siamese and Triplet Siamese Neural Networks are used on One-Shot and Few-Shot experiments. I tested images of various sizes that (mainly) depict illegal drugs. 
+
+**Overview**
+In this project the Label-Agnostic Siamese and Triplet Siamese Neural Networks are used for One-Shot and Few-Shot experiments. In general, the Siamese Neural Networks are (two) identical neural networks that are trained in parallel. The neural networks produce embeddings (128,256,..,etc) from the input images which are then used to identify the similarities of the two outputs. The similarity of the two embeddings is calculated through the contrastive loss function.
+
+The models were tested on images of various sizes that (mainly) depict illegal drugs. 
 
 The datasets used for the experiments are consisted by 3500 images scraped from the Dark Web
   - There are 11 main categories
@@ -26,7 +30,6 @@ An example of the data can be found in the data folder
      Most of the changes are in the drug categories
      Each dataset has different results for the models
      
-You can download the full dataset from:
       
       
       
