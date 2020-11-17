@@ -13,12 +13,14 @@ The Siamese Neural Networks are (two) identical neural networks that are trained
 
 **Triplet-Siamese Neural Networks**
 
-Similar to the Siamese Neural Networks the Triplet-Siamese Networks are making use of three identical embedding neural networks (CNNs) in this case. The embedding similarities are compared with the Triplet Loss function. In the case of Triplet-Siamese the loss is calculated instead of the overall accuracy*. To visualize how well the Triplet-Siamese Network has separated the embeddings we can use the TSNE library and visualize the manifolds of the generated embeddings (see Figures folder). 
+Similar to the Siamese Neural Networks the Triplet-Siamese Networks are making use of three identical embedding neural networks (CNNs) in this case. The embedding similarities are compared with the Triplet Loss function (Triplet_Loss.py) . In the case of the Triplet-Siamese, the performance of the models is calculated with the overall loss instead of the overall accuracy*. To visualize how well the Triplet-Siamese Network has separated the embeddings we can use the TSNE library and visualize the manifolds of the generated embeddings (see Figures folder). 
 
-**Note:** The Triplet-Siamese Neural Network generally require a lot of hours of training, esepecially compared to the Siamese Neural Networks that are quite lightweight.
+-*With a simple transfer learning script we could calculate the accuracy of the prediction. 
+
+**Note:** The Triplet-Siamese Neural Network generally require a lot of hours of training, especially when compared to the Siamese Neural Networks that are quite lightweight.
 
 
-*With a simple transfer learning script we can calculate the accuracy of the prediction. 
+
 
 The models were tested on images of various sizes that (mainly) depict illegal drugs. 
 
